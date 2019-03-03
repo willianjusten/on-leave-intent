@@ -2,12 +2,13 @@ import OnLeaveIntent from '.'
 
 describe('OnLeaveIntent', () => {
   let callback
+  let onLeaveIntent
   const delay = 1000
   jest.useFakeTimers()
 
   beforeEach(() => {
     callback = jest.fn()
-    new OnLeaveIntent(callback, delay)
+    onLeaveIntent = new OnLeaveIntent(callback, delay)
   })
 
   it('should run the callback function if user goes out of the screen', () => {
@@ -37,5 +38,13 @@ describe('OnLeaveIntent', () => {
     document.dispatchEvent(new MouseEvent('mouseout'))
 
     expect(callback).toHaveBeenCalledTimes(1)
+  })
+
+  it('should remove the listener when destroyed ', () => {
+    onLeaveIntent.destroy()
+    jest.advanceTimersByTime(delay)
+    document.dispatchEvent(new MouseEvent('mouseout'))
+
+    expect(callback).not.toHaveBeenCalled()
   })
 })
