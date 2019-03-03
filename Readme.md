@@ -1,5 +1,7 @@
 ## On Leave Content
 
+![User moving to close the page and it shows an alert modal](example/on-leave-intent.gif)
+
 > A script to detect if the user is leaving the page after some time and calls a function.
 
 I know most of us don't like those modals that appears when we are leaving the page, but sometimes we need it. And this library is not only for that, you can call any function when the user leaves the page, so use your imagination.
