@@ -8,21 +8,21 @@ I know most of us don't like those modals that appears when we are leaving the p
 
 ## Installing
 
-Install the library via `npm install on-leave-content` or `yarn add on-leave-content`. Or you can even download the [file here](https://github.com/willianjusten/on-leave-intent/blob/master/lib/on-leave-intent.min.js) and load with the good and old way `<script src="on-leave-intent.min.js"></script>`.
+Install the library via `npm install on-leave-intent` or `yarn add on-leave-intent`. Or you can even download the [file here](https://github.com/willianjusten/on-leave-intent/blob/master/lib/on-leave-intent.min.js) and load with the good and old way `<script src="on-leave-intent.min.js"></script>`.
 
 ## How to use
 
 If you used npm/yarn, just import the file:
 
 ```js
-import OnLeaveIntent from "on-leave-intent";
+import OnLeaveIntent from 'on-leave-intent';
 ```
 
 And now you can use it like:
 
 ```js
 function callback() {
-  console.log("A function to be called when user leaves the page");
+  console.log('A function to be called when user leaves the page');
 }
 
 const delay = 1000; // time in milliseconds defined to start tracking the user
