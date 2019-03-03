@@ -2,13 +2,12 @@ import OnLeaveIntent from ".";
 
 describe("OnLeaveIntent", () => {
   let callback;
-  let onLeaveIntent;
   const delay = 1000;
   jest.useFakeTimers();
 
   beforeEach(() => {
     callback = jest.fn();
-    onLeaveIntent = new OnLeaveIntent(callback, delay);
+    new OnLeaveIntent(callback, delay);
   });
 
   it("should run the callback function if user goes out of the screen", () => {
