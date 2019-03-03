@@ -1,9 +1,10 @@
 {
   "name": "on-leave-intent",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A script to detect if the user is leaving the page and calls a function.",
   "main": "lib/on-leave-intent.js",
   "scripts": {
+    "build": "webpack",
     "test": "jest",
     "start": "webpack-dev-server"
   },
