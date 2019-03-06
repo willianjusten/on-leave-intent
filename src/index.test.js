@@ -13,7 +13,7 @@ describe('OnLeaveIntent', () => {
 
   it('should run the callback function if user goes out of the screen', () => {
     jest.advanceTimersByTime(delay)
-    document.dispatchEvent(new MouseEvent('mouseout'))
+    document.dispatchEvent(new MouseEvent('mouseout', { relatedTarget: null }))
 
     expect(callback).toHaveBeenCalled()
   })
@@ -32,19 +32,19 @@ describe('OnLeaveIntent', () => {
     expect(callback).not.toHaveBeenCalled()
   })
 
-  it('should call the callback function only once', () => {
-    jest.advanceTimersByTime(delay)
-    document.dispatchEvent(new MouseEvent('mouseout'))
-    document.dispatchEvent(new MouseEvent('mouseout'))
-
-    expect(callback).toHaveBeenCalledTimes(1)
-  })
-
   it('should remove the listener when destroyed ', () => {
     onLeaveIntent.destroy()
     jest.advanceTimersByTime(delay)
     document.dispatchEvent(new MouseEvent('mouseout'))
 
     expect(callback).not.toHaveBeenCalled()
+  })
+
+  it('should call the callback function only once', () => {
+    jest.advanceTimersByTime(delay)
+    document.dispatchEvent(new MouseEvent('mouseout'))
+    document.dispatchEvent(new MouseEvent('mouseout'))
+
+    expect(callback).toHaveBeenCalledTimes(1)
   })
 })
